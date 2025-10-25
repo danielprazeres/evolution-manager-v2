@@ -1415,5 +1415,18 @@
         "title": "Configurações Padrão"
       }
     }
+  },
+  "chat": {
+    "title": "Conversas",
+    "contacts": "Contatos",
+    "groups": "Grupos",
+    "recent": "Recente",
+    "newChat": {
+      "title": "Nova Conversa",
+      "description": "Iniciar uma nova conversa com um contato",
+      "contact": "Número do Contato",
+      "placeholder": "Ex: 5511999999999",
+      "submit": "Iniciar Conversa"
+    }
   }
 }

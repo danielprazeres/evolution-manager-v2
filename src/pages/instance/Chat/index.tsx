@@ -21,6 +21,7 @@ import { useMediaQuery } from "@/utils/useMediaQuery";
 import { connectSocket, disconnectSocket } from "@/services/websocket/socket";
 
 import { Messages } from "./messages";
+import { NewChatDialog } from "./NewChatDialog";
 
 // Simple utility function
 const formatJid = (remoteJid: string): string => {
@@ -36,6 +37,9 @@ function Chat() {
 
   // Local state for real-time chats (to supplement React Query data)
   const [realtimeChats, setRealtimeChats] = useState<ChatType[]>([]);
+
+  // State for NewChatDialog
+  const [isNewChatDialogOpen, setIsNewChatDialogOpen] = useState(false);
 
   const { data: chats, isSuccess } = useFindChats({
     instanceName: instance?.name,
@@ -177,7 +181,7 @@ function Chat() {
         <ResizablePanel defaultSize={20}>
           <div className="hidden h-full flex-col bg-background text-foreground md:flex">
             <div className="flex-shrink-0 p-2">
-              <Button variant="ghost" className="w-full justify-start gap-2 px-2 text-left">
+              <Button variant="ghost" className="w-full justify-start gap-2 px-2 text-left" onClick={() => setIsNewChatDialogOpen(true)}>
                 <div className="flex h-7 w-7 items-center justify-center rounded-full">
                   <MessageCircle className="h-4 w-4" />
                 </div>
@@ -263,6 +267,8 @@ function Chat() {
           )}
         </ResizablePanel>
       </ResizablePanelGroup>
+
+      <NewChatDialog open={isNewChatDialogOpen} onOpenChange={setIsNewChatDialogOpen} />
     </div>
   );
 }

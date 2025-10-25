@@ -1435,5 +1435,18 @@
         "title": "Default Settings"
       }
     }
+  },
+  "chat": {
+    "title": "Conversations",
+    "contacts": "Contacts",
+    "groups": "Groups",
+    "recent": "Recent",
+    "newChat": {
+      "title": "New Conversation",
+      "description": "Start a new conversation with a contact",
+      "contact": "Contact Number",
+      "placeholder": "Ex: 5511999999999",
+      "submit": "Start Conversation"
+    }
   }
 }
